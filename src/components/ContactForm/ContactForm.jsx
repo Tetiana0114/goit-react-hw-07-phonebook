@@ -15,14 +15,14 @@ const ContactForm = () => {
     e.preventDefault();
     const field = e.target;
     const name = field.elements.name.value;
-    const number = field.elements.number.value;
+    const phone = field.elements.number.value;
 
     const foundContact = contacts.find(
       contact => contact.name.toLowerCase().trim() === name.toLowerCase().trim()
     );
 
     if (!foundContact) {
-      dispatch(addContact(name, number));
+      dispatch(addContact({ name, phone }));
       field.reset();
       Notify.success(`${name} is added to the contacts !`);
     } else {

@@ -28,7 +28,7 @@ const ContactList = () => {
             <li className={css.list_item} key={contact.id}>
                 <p className={css.list_name}>
                         <FiUser size={20} className={css.icon} />
-                        {contact.name}: <span className={css.list_number}>{contact.number}</span>
+                        {contact.name}: <span className={css.list_number}>{contact.phone}</span>
                 </p>
                 <button
                     type="button"
