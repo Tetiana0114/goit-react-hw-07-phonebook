@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { FiUser } from "react-icons/fi";
-import { deleteContact } from 'redux/contactsSlice';
+import { deleteContact } from 'redux/operations';
 import css from './ContactList.module.css'
 import { getContacts, getFilter } from 'redux/selectors';
 

@@ -2,8 +2,20 @@ import Section from 'components/Section';
 import ContactForm from 'components/ContactForm';
 import ContactList from 'components/ContactList';
 import SearchField from 'components/SearchField';
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getError, getIsLoading } from 'redux/selectors';
+import { fetchContacts } from 'redux/operations';
 
 export const App = () => {
+  const dispatch = useDispatch();
+  const isLoading = useSelector(getIsLoading);
+  const error = useSelector(getError);
+
+    useEffect(() => {
+    dispatch(fetchContacts());
+    }, [dispatch]);
+  
 return (
   <div
     style={{
@@ -17,7 +29,8 @@ return (
 <ContactForm />
 </Section>
 <Section title="Contacts:">
-<SearchField />
+      <SearchField />
+      {isLoading && !error && <b>Request in progress...</b>}
 <ContactList />
 </Section>
   </div>

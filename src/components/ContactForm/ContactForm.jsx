@@ -3,7 +3,7 @@ import { BsPhoneFill } from "react-icons/bs";
 import { FaUserPlus } from "react-icons/fa";
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 import css from './ContactForm.module.css'
-import { addContact } from '../../redux/contactsSlice';
+import { addContact } from 'redux/operations';
 import { getContacts } from 'redux/selectors';
 
 
