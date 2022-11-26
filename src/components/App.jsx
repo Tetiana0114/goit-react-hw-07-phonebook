@@ -29,8 +29,8 @@ return (
 <ContactForm />
 </Section>
 <Section title="Contacts:">
-      <SearchField />
-      {isLoading && !error && <b>Request in progress...</b>}
+<SearchField />
+{isLoading && !error && <b>Request in progress...</b>}
 <ContactList />
 </Section>
   </div>
